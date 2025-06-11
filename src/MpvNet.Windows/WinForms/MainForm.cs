@@ -85,6 +85,7 @@ public partial class MainForm : Form
             Player.ObservePropertyString("vid", PropChangeVid);
 
             Player.ObservePropertyString("title", PropChangeTitle);
+            Player.ObservePropertyString("sub-text", text => TTSManager.Speak(text));
 
             Player.ObservePropertyInt("edition", PropChangeEdition);
 
@@ -1424,6 +1425,9 @@ public partial class MainForm : Form
     protected override void OnFormClosing(FormClosingEventArgs e)
     {
         base.OnFormClosing(e);
+
+        TTSConfig.Save();
+        Config.Save();
 
         if (Player.IsQuitNeeded)
             Player.CommandV("quit");

@@ -229,6 +229,7 @@ public static class InputHelp
         Add(b, new (_("Tools"), _("Shuffle Playlist"), "playlist-shuffle"));
         Add(b, new (_("Tools"), _("Toggle Hardware Decoding"), "cycle-values hwdec auto no", "Ctrl+h"));
         Add(b, new (_("Tools"), _("Exit Watch Later"), "quit-watch-later", "Q"));
+        Add(b, new (_("Tools"), "Subtitle TTS Settings", "script-message-to mpvnet show-settings"));
 
         Add(b, new ("", _("Custom")));
 

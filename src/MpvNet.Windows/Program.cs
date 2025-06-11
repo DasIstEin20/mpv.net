@@ -39,6 +39,9 @@ static class Program
 
             App.Init();
             Theme.Init();
+            Config.Load();
+            TTSConfig.Load();
+            TTSManager.Init();
             Mutex mutex = new Mutex(true, StringHelp.GetMD5Hash(App.ConfPath), out bool isFirst);
 
             if (Control.ModifierKeys == Keys.Shift ||
