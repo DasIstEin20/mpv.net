@@ -881,6 +881,7 @@ public partial class MainForm : Form
     
     void Player_FileLoaded()
     {
+        TTSHelper.Speak("Playback started");
         BeginInvoke(() => {
             SetTitleInternal();
 
