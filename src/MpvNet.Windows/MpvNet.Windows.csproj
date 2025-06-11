@@ -39,9 +39,10 @@
 		</Page>
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Mvvm" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" />
-	</ItemGroup>
+        <ItemGroup>
+                <PackageReference Include="CommunityToolkit.Mvvm" />
+                <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" />
+                <Reference Include="System.Speech" />
+        </ItemGroup>
 
 </Project>

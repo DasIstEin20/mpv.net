@@ -43,6 +43,7 @@ public class GuiCommand
         ["remove-from-path"] = args => RemoveFromPath(),
         ["scale-window"] = args => ScaleWindow?.Invoke(float.Parse(args[0], CultureInfo.InvariantCulture)),
         ["show-about"] = args => ShowDialog(typeof(AboutWindow)),
+        ["show-settings"] = args => ShowDialog(typeof(SettingsDialog)),
         ["show-bindings"] = args => ShowBindings(),
         ["show-commands"] = args => ShowCommands(),
         ["show-conf-editor"] = args => ShowDialog(typeof(ConfWindow)),
