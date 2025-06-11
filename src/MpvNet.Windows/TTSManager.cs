@@ -9,15 +9,15 @@ public static class TTSManager
 
     public static void Init()
     {
-        if (!string.IsNullOrEmpty(TTSConfig.SelectedVoice))
+        if (!string.IsNullOrEmpty(Settings.TTSVoice))
         {
-            try { synth.SelectVoice(TTSConfig.SelectedVoice); } catch { }
+            try { synth.SelectVoice(Settings.TTSVoice); } catch { }
         }
     }
 
     public static void Speak(string text)
     {
-        if (TTSConfig.EnableTTS && !string.IsNullOrWhiteSpace(text) && text != last)
+        if (Settings.EnableTTS && !string.IsNullOrWhiteSpace(text) && text != last)
         {
             last = text;
             synth.SpeakAsyncCancelAll();
