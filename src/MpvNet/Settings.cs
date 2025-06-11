@@ -61,3 +61,21 @@ class SettingsManager
         }
     }
 }
+
+public static class Settings
+{
+    public static bool EnableTTS;
+    public static string TTSVoice = "";
+
+    public static void LoadTTS()
+    {
+        EnableTTS = Config.GetBool(nameof(EnableTTS));
+        TTSVoice = Config.GetString(nameof(TTSVoice));
+    }
+
+    public static void SaveTTS()
+    {
+        Config.SetBool(nameof(EnableTTS), EnableTTS);
+        Config.SetString(nameof(TTSVoice), TTSVoice);
+    }
+}

@@ -40,7 +40,7 @@ static class Program
             App.Init();
             Theme.Init();
             Config.Load();
-            TTSConfig.Load();
+            Settings.LoadTTS();
             TTSManager.Init();
             Mutex mutex = new Mutex(true, StringHelp.GetMD5Hash(App.ConfPath), out bool isFirst);
 

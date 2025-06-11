@@ -187,6 +187,8 @@ public class MainPlayer : MpvClient
                     CommandV("quit");
         });
 
+        ObservePropertyString("sub-text", text => TTSManager.Speak(text));
+
         Initialized?.Invoke();
     }
 

@@ -1426,7 +1426,7 @@ public partial class MainForm : Form
     {
         base.OnFormClosing(e);
 
-        TTSConfig.Save();
+        Settings.SaveTTS();
         Config.Save();
 
         if (Player.IsQuitNeeded)

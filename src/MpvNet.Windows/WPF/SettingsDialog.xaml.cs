@@ -13,16 +13,16 @@ public partial class SettingsDialog : Window
     {
         InitializeComponent();
         Voices = TTSManager.GetInstalledVoices();
-        EnableTTS = TTSConfig.EnableTTS;
-        SelectedVoice = string.IsNullOrEmpty(TTSConfig.SelectedVoice) ? Voices.FirstOrDefault() ?? "" : TTSConfig.SelectedVoice;
+        EnableTTS = Settings.EnableTTS;
+        SelectedVoice = string.IsNullOrEmpty(Settings.TTSVoice) ? Voices.FirstOrDefault() ?? "" : Settings.TTSVoice;
         DataContext = this;
     }
 
     void OK_Click(object sender, RoutedEventArgs e)
     {
-        TTSConfig.EnableTTS = EnableTTS;
+        Settings.EnableTTS = EnableTTS;
         if (!string.IsNullOrEmpty(SelectedVoice))
-            TTSConfig.SelectedVoice = SelectedVoice;
+            Settings.TTSVoice = SelectedVoice;
         TTSManager.Init();
         DialogResult = true;
         Close();
