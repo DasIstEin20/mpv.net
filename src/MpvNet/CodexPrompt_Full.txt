@@ -1,0 +1,17 @@
+You are working on a C# WPF/.NET project called mpv.net.
+
+Tasks:
+1. Add the file TTSManager.cs to the MpvNet project.
+2. In Settings.cs, define two static fields:
+   public static bool EnableTTS;
+   public static string TTSVoice;
+   Add methods LoadTTS() and SaveTTS() to read/write these values via Config.Get/Set.
+3. In SettingsDialog.cs, add two GUI components:
+   - Checkbox: Enable Subtitle TTS -> modifies Settings.EnableTTS
+   - Combobox: Select Voice -> populates from TTSManager.GetInstalledVoices(), writes to Settings.TTSVoice
+4. In Player.cs, call TTSManager.Speak(subtitleText) when subtitles are updated.
+5. Ensure Settings.LoadTTS() is called on startup, and SaveTTS() when settings are saved.
+6. Make sure the program builds with MSBuild (Release/x64). Output should be mpvnet.exe.
+
+Use System.Speech.Synthesis for TTS, use SpeakAsync and SpeakAsyncCancelAll for each line.
+Don't repeat already-read subtitle text.
